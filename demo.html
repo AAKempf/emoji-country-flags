@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>203 Emoji Unicode Country Flags</title>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <link href="flags.min.css" rel="stylesheet" type="text/css" media="screen">
+   <style>
+      .sp {
+         margin: 0.4em;
+         padding: 0.2em 0.5em;
+         border: 1px solid #e6e6e6;
+         display: inline-block;
+      }
+
+      [class^="flag-"] {
+         font-size: 200%;
+      }
+
+   </style>
+</head>
+<body>
+<h1>203 Emoji Unicode Country Flags</h1>
+<div>No image, unicode only. 5.796 Bytes CSS for all this country flags</div>
+<div class="flagbox"></div>
+<script>
+
+    $(document).ready(function () {
+
+        function showFlags() {
+            var span = '';
+            const flagbox = $(".flagbox");
+            $.getJSON('countries.json', function (data) {
+                $.each(data, function (index) {
+                    span = '<span class="sp"><span class="flag-' + data[index].iso.toLowerCase() + '"></span>&nbsp;' + data[index].country + '</span>';
+                    flagbox.append(span);
+                });
+            });
+        }
+
+        showFlags();
+
+    });
+</script>
+</body>
+</html>
