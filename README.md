@@ -26,7 +26,7 @@ The ISO code of the country is added to the class "flag-". Here, "de" is added, 
 
 ### Other  
 
-All flags: <https://www.amalesh.com/demo.html>
+All flags: <https://amalesh.de/demo.html>
 
 Countries and codes: countries.json
 
